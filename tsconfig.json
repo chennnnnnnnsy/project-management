@@ -21,6 +21,11 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
+    "src",
+    "typings/**/*"
+  ],
+  "exclude": [
+    "config/**/*",
+    "script/**/*"
   ]
 }
