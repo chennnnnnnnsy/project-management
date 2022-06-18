@@ -25,6 +25,7 @@ const ForkTsCheckerWebpackPlugin =
     ? require("react-dev-utils/ForkTsCheckerWarningWebpackPlugin")
     : require("react-dev-utils/ForkTsCheckerWebpackPlugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const AntdDayjsWebpackPlugin = require('antd-dayjs-webpack-plugin');
 
 const createEnvironmentHash = require("./webpack/persistentCache/createEnvironmentHash");
 
@@ -103,6 +104,18 @@ module.exports = function (webpackEnv) {
   const env = getClientEnvironment(paths.publicUrlOrPath.slice(0, -1));
 
   const shouldUseReactRefresh = env.raw.FAST_REFRESH;
+
+  const getSassResourcesLoader = () => {
+    return {
+      loader: require.resolve("sass-resources-loader"),
+      options: {
+        resources: [
+          path.resolve(__dirname, "../src/styles/var.scss"),
+          path.resolve(__dirname, "../src/styles/mixins.scss"),
+        ],
+      },
+    };
+  };
 
   // common function to get style loaders
   const getStyleLoaders = (cssOptions, preProcessor) => {
@@ -183,6 +196,7 @@ module.exports = function (webpackEnv) {
         }
       );
     }
+    loaders.push(getSassResourcesLoader());
     return loaders;
   };
 
@@ -749,6 +763,8 @@ module.exports = function (webpackEnv) {
             },
           },
         }),
+        // antd 替换 moment.js
+        new AntdDayjsWebpackPlugin()
     ].filter(Boolean),
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter

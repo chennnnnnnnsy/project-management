@@ -1,5 +1,4 @@
 @import-normalize; /* bring in normalize.css styles */
-@import "./var.scss";
 
 * {
   margin: 0;
@@ -28,7 +27,7 @@ code {
 #root,
 .App {
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   position: relative;
   overflow: hidden;
 }
