@@ -12,6 +12,7 @@ class I8nStore {
       currentLocale: observable,
       changeLocale: action,
       antdLocale: computed,
+      nextLocaleText: computed
     });
   }
 
@@ -19,12 +20,15 @@ class I8nStore {
     return this.currentLocale === "en" ? enUS : zhCN;
   }
 
+  get nextLocaleText() {
+    return this.currentLocale === "en" ? "中文" : "English";
+  }
+
   changeLocale() {
     const locale = this.currentLocale === "en" ? "zh-cn" : "en";
     changeLocaleByDayjs(locale);
-    this.currentLocale = locale === "en" ? "en" : "zh-cn";
+    this.currentLocale = locale;
   }
 }
-
 
 export default I8nStore;

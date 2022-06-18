@@ -1,5 +1,5 @@
 import React from "react";
-import I8nStore from "./i8nStore";
+import I8nStore from "./i8n";
 
 class RootStore {
   i8n: I8nStore;
