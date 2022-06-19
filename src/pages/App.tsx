@@ -3,6 +3,7 @@ import { Routes } from "react-router-dom";
 import { generateCommonRoutes } from "@/permission";
 import { ConfigProvider } from "antd";
 import useRootStore from "@/store";
+import { observer } from "mobx-react-lite"
 
 const App: React.FC = () => {
   const { i8n } = useRootStore();
@@ -15,4 +16,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default observer(App);

@@ -1,0 +1,44 @@
+.login {
+  display: flex;
+  height: 100%;
+}
+
+.left {
+  width: 60%;
+  background-image: url("../../assets//login-bg.jpg");
+  background-size: cover;
+}
+
+.right {
+  @include flex-center;
+  flex: 1;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.form {
+  @include shadow;
+  padding: $default-padding;
+  padding-bottom: 12px;
+}
+.formBtn {
+  width: 100%;
+}
+
+.other {
+  @include flex-horizontal-center;
+  justify-content: space-between;
+  padding-top: 12px;
+}
+
+.backBtn,
+.registerBtn {
+  cursor: pointer;
+}
+
+.registerBtn {
+  color: $primary-color;
+}

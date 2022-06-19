@@ -7,4 +7,8 @@ declare global {
     element: React.FC<any>; // 组件
     name: string;
   }
+
+  interface IObject {
+    [s: string]: any;
+  }
 }

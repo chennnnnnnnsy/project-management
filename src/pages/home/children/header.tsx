@@ -2,10 +2,13 @@ import React from "react";
 import Css from "../index.module.scss";
 import { Button } from "antd";
 import useRootStore from "@/store";
-import { observer } from "mobx-react-lite";
 import { useNavigate } from "react-router-dom";
 
-const Header: React.FC = () => {
+interface HomeHeaderProps {
+  texts: HomeLT;
+}
+
+const Header: React.FC<HomeHeaderProps> = ({ texts }) => {
   const { i8n } = useRootStore();
   const navigate = useNavigate();
 
@@ -21,11 +24,11 @@ const Header: React.FC = () => {
           {i8n.nextLocaleText}
         </Button>
         <Button type="primary" onClick={toPage}>
-          登录
+          {texts.login}
         </Button>
       </section>
     </header>
   );
 };
 
-export default observer(Header);
+export default Header;
