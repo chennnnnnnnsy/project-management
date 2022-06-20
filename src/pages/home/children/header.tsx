@@ -4,11 +4,11 @@ import { Button } from "antd";
 import useRootStore from "@/store";
 import { useNavigate } from "react-router-dom";
 
-interface HomeHeaderProps {
+interface HeaderProps {
   texts: HomeLT;
 }
 
-const Header: React.FC<HomeHeaderProps> = ({ texts }) => {
+const Header: React.FC<HeaderProps> = ({ texts }) => {
   const { i8n } = useRootStore();
   const navigate = useNavigate();
 
