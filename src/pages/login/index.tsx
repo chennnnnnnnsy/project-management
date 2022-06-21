@@ -12,10 +12,12 @@ const Login: React.FC = () => {
   const { i8n } = useRootStore();
   const texts = i8n.getLocaleTexts<LoginLT>("login");
 
-  const { run, loading } = useRequest(login, {manual: true});
+  const { runAsync, loading } = useRequest(login, { manual: true });
 
   const onFinish = (values: any) => {
-    run(values);
+    runAsync(values).then((res) => {
+      console.log("login success", res);
+    });
   };
 
   const rules = {

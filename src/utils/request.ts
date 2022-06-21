@@ -32,7 +32,7 @@ axios.interceptors.response.use(
   }
 );
 
-const request = async <T>({
+const request = <T>({
   url = "",
   params = {},
   headers = {},

@@ -4,12 +4,6 @@ import { BrowserRouter } from "react-router-dom";
 import "./styles/index.scss";
 import App from "./pages/App";
 
-// if (process.env.NODE_ENV === "development") {
-import mockInit from "@/mock";
-
-mockInit();
-// }
-
 // import reportWebVitals from './utils/reportWebVitals';
 
 const root = ReactDOM.createRoot(
