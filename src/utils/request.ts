@@ -1,5 +1,6 @@
 import axios from "axios";
 import { message, notification } from "antd";
+import {logout} from './index'
 
 const resultCode = ["00000000", "200", 200];
 
@@ -56,12 +57,12 @@ const request = <T>({
           message: "登录超时",
           description: "登录超时，请重新登录！",
         });
-
-        // TODO: 这里还要做登出处理
+        logout();
       } else if (data && data instanceof Blob) {
         // 文件流数据
         return { data };
       }
+
       return {
         ...data,
         message: _msg,

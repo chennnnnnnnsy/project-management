@@ -2,23 +2,17 @@ import React from "react";
 import Css from "./index.module.scss";
 import { Button, Form, Input } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
+
 import { useNavigate } from "react-router-dom";
 import useRootStore from "@/store";
-import { login } from "@/api";
-import { useRequest } from "ahooks";
+import useLoginStore from "./model";
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
+  const loginStore = useLoginStore();
+
   const { i8n } = useRootStore();
   const texts = i8n.getLocaleTexts<LoginLT>("login");
-
-  const { runAsync, loading } = useRequest(login, { manual: true });
-
-  const onFinish = (values: any) => {
-    runAsync(values).then((res) => {
-      console.log("login success", res);
-    });
-  };
 
   const rules = {
     userName: [{ required: true, message: texts.userName }],
@@ -42,7 +36,7 @@ const Login: React.FC = () => {
       <section className={Css.right}>
         <div className={Css.form}>
           <p className={Css.title}>{texts.title}</p>
-          <Form name="normal_login" onFinish={onFinish}>
+          <Form name="normal_login" onFinish={loginStore.toLogin}>
             <Form.Item name="userName" rules={rules.userName}>
               <Input
                 prefix={<UserOutlined className="site-form-item-icon" />}
@@ -58,7 +52,7 @@ const Login: React.FC = () => {
             </Form.Item>
             <Form.Item>
               <Button
-                loading={loading}
+                loading={loginStore.loading}
                 className={Css.formBtn}
                 type="primary"
                 htmlType="submit"

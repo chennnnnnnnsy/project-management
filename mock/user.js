@@ -4,8 +4,12 @@ function init(router, Mock) {
       Mock.mock({
         message: "success",
         isSuccess: true,
-        result: "123",
-        code: 0,
+        result: {
+          token: "@string",
+          userName: "chensy",
+          role: 'admin'
+        },
+        code: "00000000",
       })
     );
   });
