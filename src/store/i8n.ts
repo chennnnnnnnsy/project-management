@@ -4,18 +4,15 @@ import { changeLocaleByDayjs } from "@/utils/dayjs";
 import enUS from "antd/lib/locale/en_US";
 import zhCN from "antd/lib/locale/zh_CN";
 
-// ----- locale
-import home from "@/i8n/home";
-import login from "@/i8n/login";
-
-// ----- locale end
+import localeEN from "@/locale/en";
+import localeZhCN from "@/locale/zh-cn";
 
 class I8nStore {
   currentLocale: "zh-cn" | "en" = "zh-cn";
 
-  localeTexts: any = {
-    home,
-    login,
+  localeTexts: { [s: string]: ILocaleText } = {
+    "zh-cn": localeZhCN,
+    en: localeEN,
   };
 
   constructor() {
@@ -42,8 +39,9 @@ class I8nStore {
     this.currentLocale = locale;
   }
 
-  getLocaleTexts<T>(pageName: LocalePage): T {
-    const texts: T = this.localeTexts[pageName][this.currentLocale];
+  getLocaleTexts<T>(pageName: TPageName): T {
+    const lt: any = this.localeTexts[this.currentLocale];
+    const texts: T = lt[pageName];
     return texts;
   }
 }

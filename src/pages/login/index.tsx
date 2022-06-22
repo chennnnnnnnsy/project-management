@@ -1,34 +1,14 @@
 import React from "react";
-import Css from "./index.module.scss";
+import useLoginStore from "./model";
+
 import { Button, Form, Input } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 
-import { useNavigate } from "react-router-dom";
-import useRootStore from "@/store";
-import useLoginStore from "./model";
+import Css from "@/styles/modules/login.module.scss";
 
 const Login: React.FC = () => {
-  const navigate = useNavigate();
-  const loginStore = useLoginStore();
-
-  const { i8n } = useRootStore();
-  const texts = i8n.getLocaleTexts<LoginLT>("login");
-
-  const rules = {
-    userName: [{ required: true, message: texts.userName }],
-    password: [
-      { required: true, message: texts.password },
-      { min: 6, message: texts.passwordMinLength },
-    ],
-  };
-
-  const toPage = () => {
-    navigate("/", { replace: true });
-  };
-
-  const toRegister = () => {
-    window.alert("暂时未开放注册哦！");
-  };
+  const { texts, toLogin, rules, toPage, toRegister, loading } =
+    useLoginStore();
 
   return (
     <main className={Css.login}>
@@ -36,7 +16,7 @@ const Login: React.FC = () => {
       <section className={Css.right}>
         <div className={Css.form}>
           <p className={Css.title}>{texts.title}</p>
-          <Form name="normal_login" onFinish={loginStore.toLogin}>
+          <Form name="normal_login" onFinish={toLogin}>
             <Form.Item name="userName" rules={rules.userName}>
               <Input
                 prefix={<UserOutlined className="site-form-item-icon" />}
@@ -52,7 +32,7 @@ const Login: React.FC = () => {
             </Form.Item>
             <Form.Item>
               <Button
-                loading={loginStore.loading}
+                loading={loading}
                 className={Css.formBtn}
                 type="primary"
                 htmlType="submit"

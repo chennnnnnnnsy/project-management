@@ -1,0 +1,19 @@
+.notFound {
+  @include flex-center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.title {
+  font-size: 10rem;
+  font-weight: bold;
+  margin: 0;
+  background-image: linear-gradient(to right, orange, purple);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.msg {
+  margin-top: 1rem;
+  font-size: 2rem;
+}

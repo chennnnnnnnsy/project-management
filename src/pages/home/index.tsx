@@ -1,11 +1,13 @@
 import React from "react";
-import Css from "./index.module.scss";
-import Header from "./children/header";
 import useRootStore from "@/store";
+
+import Header from "./children/header";
+
+import Css from "@/styles/modules/home.module.scss";
 
 const Home: React.FC = () => {
   const { i8n } = useRootStore();
-  const texts = i8n.getLocaleTexts<HomeLT>("home");
+  const texts = i8n.getLocaleTexts<IHomeLT>("home");
 
   return (
     <div className={Css.home}>
