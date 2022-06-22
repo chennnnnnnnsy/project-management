@@ -23,6 +23,14 @@ class I8nStore {
       antdLocale: computed,
       nextLocaleText: computed,
     });
+
+    const lang: any = sessionStorage.getItem("lang");
+
+    if (lang) {
+      this.currentLocale = lang;
+    } else {
+      sessionStorage.setItem("lang", this.currentLocale);
+    }
   }
 
   get antdLocale() {
@@ -36,6 +44,7 @@ class I8nStore {
   changeLocale() {
     const locale = this.currentLocale === "en" ? "zh-cn" : "en";
     changeLocaleByDayjs(locale);
+    sessionStorage.setItem("lang", locale);
     this.currentLocale = locale;
   }
 
