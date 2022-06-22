@@ -1,5 +1,6 @@
 const notFound: INotFoundLT = {
   message: "The page is not found!",
+  backHome: 'Back to home'
 };
 const home: IHomeLT = {
   login: "Login",

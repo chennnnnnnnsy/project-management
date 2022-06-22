@@ -26,5 +26,11 @@ declare global {
     code: string;
   }
 
-  type TPageName  = 'home' | 'login' | 'notFound' | 'notPermission' | 'project';
+  type TPageName =
+    | "home"
+    | "login"
+    | "notFound"
+    | "notPermission"
+    | "project"
+    | "profile";
 }

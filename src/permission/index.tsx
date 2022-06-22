@@ -1,10 +1,6 @@
 import commonRoutes from "./common";
-import { Route } from "react-router-dom";
+import otherRoutes from "./other";
 
-function generateCommonRoutes() {
-  return commonRoutes.map((vo) => (
-    <Route key={vo.name} path={vo.path} element={<vo.element />} />
-  ));
-}
+const mainRoutes = [...otherRoutes];
 
-export { generateCommonRoutes };
+export { commonRoutes, mainRoutes };

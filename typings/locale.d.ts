@@ -17,6 +17,7 @@ interface ILoginLT {
 
 interface INotFoundLT {
   message: string;
+  backHome: string;
 }
 
 interface ILocaleText {

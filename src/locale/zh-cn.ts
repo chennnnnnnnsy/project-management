@@ -1,5 +1,6 @@
 const notFound: INotFoundLT = {
   message: "没有找到该页面！",
+  backHome: '返回首页'
 };
 const home: IHomeLT = {
   login: "登录",

@@ -11,7 +11,7 @@ const useLoginModel = () => {
   };
 
   const { i8n } = useRootStore();
-  const texts = i8n.getLocaleTexts<ILoginLT>('login');
+  const texts = i8n.getLocaleTexts<ILoginLT>("login");
 
   // form rules
   const rules = {
@@ -36,7 +36,7 @@ const useLoginModel = () => {
           })
         );
 
-        navigate("/project", { replace: true });
+        navigate("/profile", { replace: true });
       }
     });
   };

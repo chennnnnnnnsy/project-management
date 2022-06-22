@@ -1,4 +1,4 @@
-import Page404 from "@/pages/404";
+import NotFound from "@/pages/notFound";
 import Login from "@/pages/login";
 import NotPermission from "@/pages/notPermission";
 import Home from "@/pages/home";
@@ -26,7 +26,7 @@ const routes: Array<IRoute> = [
     name: "notFound",
     path: "/*",
     permission: null,
-    element: Page404,
+    element: NotFound,
   },
 ];
 

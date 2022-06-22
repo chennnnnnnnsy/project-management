@@ -1,11 +1,13 @@
 import React from "react";
-import Css from "../index.module.scss";
-import { Button } from "antd";
 import useRootStore from "@/store";
 import { useNavigate } from "react-router-dom";
 
+import { Button } from "antd";
+
+import Css from "@/styles/modules/home.module.scss";
+
 interface HeaderProps {
-  texts: HomeLT;
+  texts: IHomeLT;
 }
 
 const Header: React.FC<HeaderProps> = ({ texts }) => {
