@@ -7,7 +7,8 @@ function init(router, Mock) {
         result: {
           token: "@string",
           userName: "chensy",
-          role: 'admin'
+          role: "admin",
+          permissions: ["PMSystem-profile"],
         },
         code: "00000000",
       })

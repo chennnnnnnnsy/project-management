@@ -1,6 +1,6 @@
 import axios from "axios";
 import { message, notification } from "antd";
-import {logout} from './index'
+import { logout } from "./index";
 
 const resultCode = ["00000000", "200", 200];
 

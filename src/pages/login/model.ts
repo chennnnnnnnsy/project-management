@@ -10,7 +10,7 @@ const useLoginModel = () => {
     navigate("/", { replace: true });
   };
 
-  const { i8n } = useRootStore();
+  const { i8n, user } = useRootStore();
   const texts = i8n.getLocaleTexts<ILoginLT>("login");
 
   // form rules
@@ -27,16 +27,9 @@ const useLoginModel = () => {
   const toLogin = (params: any) => {
     runAsync(params).then((res) => {
       if (res.isSuccess) {
-        sessionStorage.setItem("pm-token", res.result.token);
-        sessionStorage.setItem(
-          "pm-user",
-          JSON.stringify({
-            userName: res.result.userName,
-            role: res.result.role,
-          })
-        );
-
-        navigate("/profile", { replace: true });
+        user.actionAfterLoginSuccess(res.result).then(() => {
+          navigate("/profile", { replace: true });
+        });
       }
     });
   };

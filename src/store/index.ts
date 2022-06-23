@@ -1,14 +1,14 @@
 import React from "react";
 import I8nStore from "./i8n";
-import RouterStore from "./router";
+import UserStore from "./user";
 
 class RootStore {
   i8n: I8nStore;
-  router: RouterStore;
+  user: UserStore;
 
   constructor() {
     this.i8n = new I8nStore();
-    this.router = new RouterStore();
+    this.user = new UserStore();
   }
 }
 

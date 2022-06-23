@@ -11,6 +11,7 @@ interface LoginRes {
   token: string;
   userName: string;
   role: string;
+  permissions: Array<string>;
 }
 
 export const login = (params: LoginReq) => {
