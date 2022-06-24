@@ -19,19 +19,26 @@ interface INotFoundLT {
   backHome: string;
 }
 
-interface IHeaderCompLT { // 公共组件要加 Comp
+interface IHeaderCompLT {
+  // 公共组件要加 Comp
   login: string;
   logout: string;
 }
 
-  interface IProfileLT {
-groupName: string;
+interface IProfileLT {
+  groupName: string;
+  start: string;
+  develop: string;
+  maintaining: string;
+  end: string;
+  version: string;
+  status: string;
 }
 
 interface ILocaleText {
   home: IHomeLT;
   login: ILoginLT;
   notFound: INotFoundLT;
-  profile:IProfileLT;
+  profile: IProfileLT;
   HeaderComp: IHeaderCompLT;
 }

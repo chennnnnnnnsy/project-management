@@ -14,7 +14,7 @@ function project(router, Mock) {
               7
             ),
             "status|1": ["develop", "end", "start", "maintaining"],
-            version: Mock.Random.float(0, 10, 1, 3),
+            version: Mock.Random.float(0, 10, 1, 2),
           },
         ],
         code: "00000000",

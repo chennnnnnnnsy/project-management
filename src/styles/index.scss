@@ -52,3 +52,34 @@ code {
   height: 1px;
   background-color: #d9d9d9;
 }
+
+.gray {
+  color: #ccc;
+}
+.gray-bg {
+  background-color: #ccc;
+}
+.success {
+  color: $success-color;
+}
+.success-bg {
+  background-color: $success-color;
+}
+.red {
+  color: $error-color;
+}
+.red-bg {
+  background-color: $error-color;
+}
+.orange {
+  color: $warning-color;
+}
+.orange-bg {
+  background-color: $warning-color;
+}
+.blue {
+  color: $primary-color;
+}
+.blue-bg {
+  background-color: $primary-color;
+}

@@ -14,7 +14,7 @@ const Profile: React.FC = () => {
       <main className={Css.profile}>
         <section className={Css.group}>
           <h2>{texts.groupName}</h2>
-          <GroupList list={data} />
+          <GroupList texts={texts} list={data} />
         </section>
       </main>
     </BaseLayout>

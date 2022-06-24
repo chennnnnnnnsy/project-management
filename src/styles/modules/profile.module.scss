@@ -15,10 +15,25 @@
   @include flex-vertical-center;
   @include shadow;
 
-  padding: 14px $default-padding 0;
+  padding: 14px $default-padding;
   margin-bottom: $default-padding;
 }
 
-.item > p {
-  padding-right: $default-padding;
+.item  p {
+  margin-bottom: 0;
+}
+.col1 {
+  width: 460px;
+}
+.groupName {
+  display: inline-block;
+  font-size: 16px;
+}
+.status {
+  margin-left: 14px;
+  display: inline-block;
+  color: #fff;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
 }

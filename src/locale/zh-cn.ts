@@ -20,6 +20,13 @@ const HeaderComp: IHeaderCompLT = {
 };
 const profile: IProfileLT = {
   groupName: "项目组",
+  start: "立项", // 立项 -- 意味没有定下一个版本之前
+  develop: "迭代中", // 迭代中 -- 确定版本号，开始开发了
+  maintaining: "维护中", // 维护中 -- 已有版本开发完，且没有开发下一个版本功能前
+  end: "终止", // 终止 -- 不再迭代和不再维护
+
+  status: "状态",
+  version: '版本号'
 };
 const ZhCN: ILocaleText = {
   notFound,
