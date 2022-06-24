@@ -24,9 +24,14 @@ interface IHeaderCompLT { // 公共组件要加 Comp
   logout: string;
 }
 
+  interface IProfileLT {
+groupName: string;
+}
+
 interface ILocaleText {
   home: IHomeLT;
   login: ILoginLT;
   notFound: INotFoundLT;
+  profile:IProfileLT;
   HeaderComp: IHeaderCompLT;
 }

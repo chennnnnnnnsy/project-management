@@ -18,12 +18,16 @@ const HeaderComp: IHeaderCompLT = {
   login: 'Login',
   logout: 'Logout'
 }
+const profile: IProfileLT = {
+  groupName: 'Project Group'
+}
 
 const EN: ILocaleText = {
   notFound,
   home,
   login,
-  HeaderComp
+  HeaderComp,
+  profile
 };
 
 export default EN;

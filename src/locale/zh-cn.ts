@@ -16,14 +16,17 @@ const login: ILoginLT = {
 };
 const HeaderComp: IHeaderCompLT = {
   login: "登录",
-  logout: '推出登录'
+  logout: "退出登录",
 };
-
+const profile: IProfileLT = {
+  groupName: "项目组",
+};
 const ZhCN: ILocaleText = {
   notFound,
   home,
   login,
   HeaderComp,
+  profile,
 };
 
 export default ZhCN;

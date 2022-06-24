@@ -1,5 +1,24 @@
 .profile {
+  padding-top: $default-padding;
   width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
 }
 
+.group {
+  margin: 0 auto;
+  width: 80%;
+}
 
+.item {
+  @include flex-vertical-center;
+  @include shadow;
+
+  padding: 14px $default-padding 0;
+  margin-bottom: $default-padding;
+}
+
+.item > p {
+  padding-right: $default-padding;
+}

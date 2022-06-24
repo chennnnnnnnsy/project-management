@@ -1,4 +1,4 @@
-function init(router, Mock) {
+function user(router, Mock) {
   router.post("/login", (req, res) => {
     return res.json(
       Mock.mock({
@@ -6,8 +6,8 @@ function init(router, Mock) {
         isSuccess: true,
         result: {
           token: "@string",
-          userName: "chensy",
-          role: "admin",
+          userName: Mock.Random.cname(),
+          role: Mock.Random.last(),
           permissions: ["PMSystem-profile"],
         },
         code: "00000000",
@@ -16,4 +16,4 @@ function init(router, Mock) {
   });
 }
 
-module.exports = exports = init;
+module.exports = exports = user;

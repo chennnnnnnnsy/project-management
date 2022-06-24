@@ -7,7 +7,7 @@ const BaseLauyout: React.FC<any> = ({ children }) => {
   return (
     <div className={Css.container}>
       <Header />
-      {children}
+      <main className={Css.content}>{children}</main>
     </div>
   );
 };
