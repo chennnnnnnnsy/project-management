@@ -3,7 +3,6 @@ const notFound: INotFoundLT = {
   backHome: 'Back to home'
 };
 const home: IHomeLT = {
-  login: "Login",
   title: "Better manage your projects !",
 };
 const login: ILoginLT = {
@@ -15,11 +14,16 @@ const login: ILoginLT = {
   registerBtn: "Please to register",
   passwordMinLength: "The password length cannot be less than 6 digits",
 };
+const HeaderComp: IHeaderCompLT = {
+  login: 'Login',
+  logout: 'Logout'
+}
 
 const EN: ILocaleText = {
   notFound,
   home,
   login,
+  HeaderComp
 };
 
 export default EN;

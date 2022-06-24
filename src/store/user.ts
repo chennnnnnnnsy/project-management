@@ -3,6 +3,8 @@ import { commonRoutes, mainRoutes } from "@/permission";
 
 class UserStore {
   routes: Array<IRoute> = commonRoutes;
+  userName: string = '';
+  role: string = '';
 
   constructor() {
     makeObservable(this, {
@@ -11,8 +13,11 @@ class UserStore {
     });
 
     const isLogin = !!sessionStorage.getItem("pm-token");
+    const pmUser = JSON.parse(sessionStorage.getItem('pm-user') || "{}")
     if (isLogin) {
       this.routes = [...mainRoutes, ...commonRoutes];
+      this.userName = pmUser.userName || '';
+      this.role = pmUser.role || '';
     }
   }
 
@@ -27,6 +32,8 @@ class UserStore {
     );
     sessionStorage.setItem("permissions", JSON.stringify(data.permissions));
 
+    this.userName = data.userName;
+    this.role = data.role;
     this.routes = [...mainRoutes, ...this.routes];
 
     return new Promise((resolve) => {

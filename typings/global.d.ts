@@ -32,5 +32,6 @@ declare global {
     | "notFound"
     | "notPermission"
     | "project"
-    | "profile";
+    | "profile"
+    | "HeaderComp";
 }

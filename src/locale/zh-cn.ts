@@ -1,9 +1,8 @@
 const notFound: INotFoundLT = {
   message: "没有找到该页面！",
-  backHome: '返回首页'
+  backHome: "返回首页",
 };
 const home: IHomeLT = {
-  login: "登录",
   title: "更好地管理您的项目！",
 };
 const login: ILoginLT = {
@@ -15,11 +14,16 @@ const login: ILoginLT = {
   registerBtn: "先去注册",
   passwordMinLength: "密码长度不能小于6位",
 };
+const HeaderComp: IHeaderCompLT = {
+  login: "登录",
+  logout: '推出登录'
+};
 
 const ZhCN: ILocaleText = {
   notFound,
   home,
   login,
+  HeaderComp,
 };
 
 export default ZhCN;

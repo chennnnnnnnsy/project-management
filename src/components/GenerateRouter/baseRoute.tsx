@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Navigate } from "react-router-dom";
-import VerifyAuthHOC from "@/components/VerifyAuthHOC";
+import VerifyAuthHOC from "@/components/VerifyAuth";
 
 type TType = "not-permission" | "permission";
 

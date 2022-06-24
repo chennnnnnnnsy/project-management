@@ -1,7 +1,7 @@
 import React from "react";
 import useRootStore from "@/store";
 
-import Header from "./children/header";
+import Header from "@/components/Header";
 
 import Css from "@/styles/modules/home.module.scss";
 
@@ -11,7 +11,7 @@ const Home: React.FC = () => {
 
   return (
     <div className={Css.home}>
-      <Header texts={texts} />
+      <Header />
       <main className={Css.main}>
         <h1 className={Css.mainText}>{texts.title}</h1>
       </main>

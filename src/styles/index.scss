@@ -29,7 +29,7 @@ code {
 #root,
 .App {
   width: 100vw;
-  min-width: 1440px;
+  min-width: 1360px;
   height: 100vh;
   position: relative;
   overflow: hidden;
@@ -39,6 +39,7 @@ code {
   @include shadow-3-down;
   @include flex-vertical-center;
 
+  justify-content: space-between;
   box-sizing: border-box;
   padding: 0 $default-padding;
   width: 100%;
