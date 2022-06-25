@@ -24,6 +24,7 @@ const ZhCN: ILocaleText = {
     status: "状态",
     version: "版本号",
     addGroup: "新增项目组",
+    okBtn: '保存'
   },
   HeaderComp: {
     login: "登录",

@@ -34,6 +34,7 @@ interface IProfileLT {
   version: string;
   status: string;
   addGroup: string;
+  okBtn: string;
 }
 
 interface ILocaleText {

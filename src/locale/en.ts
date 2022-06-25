@@ -24,6 +24,7 @@ const EN: ILocaleText = {
     status: "Status",
     version: "Version",
     addGroup: "Add Project Group",
+    okBtn: 'Save'
   },
   HeaderComp: {
     login: "Login",
