@@ -25,7 +25,8 @@ const profile: IProfileLT = {
   maintaining: "Maintaining", // 维护中 -- 已有版本开发完，且没有开发下一个版本功能前
   end: "End", // 终止 -- 不再迭代和不再维护
   status: "Status",
-  version: 'Version'
+  version: 'Version',
+  addGroup: 'Add Project Group'
 };
 
 const EN: ILocaleText = {

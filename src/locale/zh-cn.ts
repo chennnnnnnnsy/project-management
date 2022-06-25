@@ -24,9 +24,9 @@ const profile: IProfileLT = {
   develop: "迭代中", // 迭代中 -- 确定版本号，开始开发了
   maintaining: "维护中", // 维护中 -- 已有版本开发完，且没有开发下一个版本功能前
   end: "终止", // 终止 -- 不再迭代和不再维护
-
   status: "状态",
-  version: '版本号'
+  version: '版本号',
+  addGroup: '新增项目组'
 };
 const ZhCN: ILocaleText = {
   notFound,

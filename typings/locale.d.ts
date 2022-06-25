@@ -33,6 +33,7 @@ interface IProfileLT {
   end: string;
   version: string;
   status: string;
+  addGroup: string;
 }
 
 interface ILocaleText {

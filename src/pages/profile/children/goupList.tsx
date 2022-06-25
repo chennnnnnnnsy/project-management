@@ -1,11 +1,13 @@
 import React from "react";
-import { ProjectGroupRes } from "@/api/project";
+import DefaultEmpty from "@/components/DefaultEmpty";
 
+import { ProjectGroupRes } from "@/api/project";
 import Css from "@/styles/modules/profile.module.scss";
 
 interface IProps {
   list: ProjectGroupRes[];
   texts: IProfileLT;
+  isEmpty: boolean;
 }
 
 const GroupList: React.FC<IProps> = ({ list, texts }) => {
@@ -22,7 +24,7 @@ const GroupList: React.FC<IProps> = ({ list, texts }) => {
   };
 
   return (
-    <>
+    <div className={Css.list}>
       {list.map((vo, index) => {
         return (
           <div key={vo.groupName + index} className={Css.item}>
@@ -36,8 +38,8 @@ const GroupList: React.FC<IProps> = ({ list, texts }) => {
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 
-export default GroupList;
+export default DefaultEmpty<IProps>(GroupList);
