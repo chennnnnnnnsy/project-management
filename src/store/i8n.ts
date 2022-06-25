@@ -24,12 +24,12 @@ class I8nStore {
       nextLocaleText: computed,
     });
 
-    const lang: any = sessionStorage.getItem("lang");
+    const lang: any = localStorage.getItem("lang");
 
     if (lang) {
       this.currentLocale = lang;
     } else {
-      sessionStorage.setItem("lang", this.currentLocale);
+      localStorage.setItem("lang", this.currentLocale);
     }
   }
 
@@ -44,11 +44,11 @@ class I8nStore {
   changeLocale() {
     const locale = this.currentLocale === "en" ? "zh-cn" : "en";
     changeLocaleByDayjs(locale);
-    sessionStorage.setItem("lang", locale);
+    localStorage.setItem("lang", locale);
     this.currentLocale = locale;
   }
 
-  getLocaleTexts<T>(pageName: TPageName): T {
+  getLocaleTexts<T>(pageName: keyof ILocaleText): T {
     const lt: any = this.localeTexts[this.currentLocale];
     const texts: T = lt[pageName];
     return texts;

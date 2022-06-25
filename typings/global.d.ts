@@ -25,13 +25,4 @@ declare global {
     result: T;
     code: string;
   }
-
-  type TPageName =
-    | "home"
-    | "login"
-    | "notFound"
-    | "notPermission"
-    | "project"
-    | "profile"
-    | "HeaderComp";
 }

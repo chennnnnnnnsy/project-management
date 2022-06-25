@@ -11,7 +11,7 @@ const useLoginModel = () => {
   };
 
   const { i8n, user } = useRootStore();
-  const texts = i8n.getLocaleTexts<ILoginLT>("login");
+  const texts = i8n.getLocaleTexts<ILoginLT>('login');
 
   // form rules
   const rules = {
