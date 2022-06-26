@@ -24,11 +24,16 @@ const ZhCN: ILocaleText = {
     status: "状态",
     version: "版本号",
     addGroup: "新增项目组",
-    okBtn: '保存'
+    okBtn: "保存",
+    remark: "备注",
+    groupNameFields: "请输入项目组名称",
   },
   HeaderComp: {
     login: "登录",
     logout: "退出登录",
+  },
+  FormAction: {
+    success: "保存成功！",
   },
 };
 

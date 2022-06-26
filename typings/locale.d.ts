@@ -35,6 +35,12 @@ interface IProfileLT {
   status: string;
   addGroup: string;
   okBtn: string;
+  remark: string;
+  groupNameFields: string;
+}
+
+interface IFormActionLT {
+  success: string;
 }
 
 interface ILocaleText {
@@ -43,4 +49,5 @@ interface ILocaleText {
   notFound: INotFoundLT;
   profile: IProfileLT;
   HeaderComp: IHeaderCompLT;
+  FormAction: IFormActionLT;
 }

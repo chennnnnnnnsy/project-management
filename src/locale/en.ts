@@ -24,11 +24,16 @@ const EN: ILocaleText = {
     status: "Status",
     version: "Version",
     addGroup: "Add Project Group",
-    okBtn: 'Save'
+    okBtn: "Save",
+    remark: "Remark",
+    groupNameFields: "Please input your group name!",
   },
   HeaderComp: {
     login: "Login",
     logout: "Logout",
+  },
+  FormAction: {
+    success: "Save success !",
   },
 };
 

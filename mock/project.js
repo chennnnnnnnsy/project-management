@@ -1,5 +1,5 @@
 function project(router, Mock) {
-  router.post("/project/group", (req, res) => {
+  router.post("/project/group/list", (req, res) => {
     return res.json(
       Mock.mock({
         message: "success",
@@ -17,6 +17,17 @@ function project(router, Mock) {
             version: Mock.Random.float(0, 10, 1, 2),
           },
         ],
+        code: "00000000",
+      })
+    );
+  });
+
+  router.post("/project/group/add", (req, res) => {
+    return res.json(
+      Mock.mock({
+        message: "success",
+        isSuccess: true,
+        result: true,
         code: "00000000",
       })
     );

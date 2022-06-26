@@ -11,7 +11,7 @@ import AddModal from "./children/addModal";
 import Css from "@/styles/modules/profile.module.scss";
 
 const Profile: React.FC = () => {
-  const { show, closeModal, showModal, texts, data, loading } =
+  const { show, closeModal, showModal, texts, data, loading,lang } =
     useProfileModel();
 
   return (
@@ -31,7 +31,7 @@ const Profile: React.FC = () => {
             </div>
             <GroupList isEmpty={!data.length} texts={texts} list={data} />
           </section>
-          <AddModal show={show} close={closeModal} texts={texts} />
+          <AddModal lang={lang} show={show} close={closeModal} texts={texts} />
         </main>
       </DefaultLoading>
     </BaseLayout>

@@ -1,23 +1,20 @@
 import useRootStore from "@/store";
 import { useRequest } from "ahooks";
 import { postProjectGroup } from "@/api/project";
-import { useState, useCallback } from "react";
+import { useModal, useForm } from "@/hooks";
+import { addProjectGroup } from "@/api/project";
 
 export const useProfileModel = () => {
   const { i8n } = useRootStore();
   const texts = i8n.getLocaleTexts<IProfileLT>("profile");
+  const lang = i8n.currentLocale;
 
-  const [show, setShow] = useState(false);
-  const closeModal = () => {
-    setShow(false);
-  };
-  const showModal = () => {
-    setShow(true);
-  };
+  const { show, showModal, closeModal } = useModal();
 
   const { data, loading } = useRequest(postProjectGroup);
 
   return {
+    lang,
     texts,
     data: data ? data.result : [],
     loading,
@@ -27,10 +24,18 @@ export const useProfileModel = () => {
   };
 };
 
-export const useAddModal = (close: any) => {
-  const save = () => {
-    close();
+export const useAddModal = (close: any, _form: any, texts: IProfileLT) => {
+  const { runAsync, loading } = useRequest(addProjectGroup, { manual: true });
+
+  const { save } = useForm({
+    form: _form,
+    cbAfterSuccess: close,
+    add: runAsync,
+  });
+
+  const rules = {
+    groupName: [{ required: true, message: texts.groupNameFields }],
   };
 
-  return { save };
+  return { save, rules, loading };
 };
