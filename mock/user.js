@@ -8,7 +8,11 @@ function user(router, Mock) {
           token: "@string",
           userName: Mock.Random.cname(),
           role: Mock.Random.last(),
-          permissions: ["PMSystem-profile"],
+          permissions: [
+            "PMSystem-profile",
+            "PMSystem-project-list",
+            "PMSystem-project",
+          ],
         },
         code: "00000000",
       })

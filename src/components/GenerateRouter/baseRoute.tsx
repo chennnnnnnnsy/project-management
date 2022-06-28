@@ -2,9 +2,13 @@ import React from "react";
 import { Route, Navigate } from "react-router-dom";
 import VerifyAuthHOC from "@/components/VerifyAuth";
 
-type TType = "not-permission" | "permission";
+type TType = "not-permission" | "permission" | "";
 
-const BaseRoutes = (vo: IRoute, type?: TType) => {
+const BaseRoutes = (
+  vo: IRoute,
+  type?: TType,
+  children?: Array<React.ReactElement>
+) => {
   let el: React.ReactElement;
 
   switch (type) {
@@ -19,15 +23,17 @@ const BaseRoutes = (vo: IRoute, type?: TType) => {
       break;
     case "permission":
       el = (
-        <Route
-          key={vo.name}
-          path={vo.path}
-          element={VerifyAuthHOC(vo.element)}
-        />
+        <Route key={vo.name} path={vo.path} element={VerifyAuthHOC(vo.element)}>
+          {children}
+        </Route>
       );
       break;
     default:
-      el = <Route key={vo.name} path={vo.path} element={<vo.element />} />;
+      el = (
+        <Route key={vo.name} path={vo.path} element={<vo.element />}>
+          {children}
+        </Route>
+      );
       break;
   }
 

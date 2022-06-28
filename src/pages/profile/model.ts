@@ -3,6 +3,7 @@ import { useRequest } from "ahooks";
 import { postProjectGroup } from "@/api/project";
 import { useModal, useForm } from "@/hooks";
 import { addProjectGroup } from "@/api/project";
+import { useNavigate } from "react-router-dom";
 
 export const useProfileModel = () => {
   const { i8n } = useRootStore();
@@ -13,6 +14,11 @@ export const useProfileModel = () => {
 
   const { data, loading } = useRequest(postProjectGroup);
 
+  const navigate = useNavigate();
+  const toProject = (id: string) => {
+    navigate("/project/list?id=" + id);
+  };
+
   return {
     lang,
     texts,
@@ -21,6 +27,7 @@ export const useProfileModel = () => {
     show,
     closeModal,
     showModal,
+    toProject
   };
 };
 

@@ -11,7 +11,7 @@ import AddModal from "./children/addModal";
 import Css from "@/styles/modules/profile.module.scss";
 
 const Profile: React.FC = () => {
-  const { show, closeModal, showModal, texts, data, loading,lang } =
+  const { show, closeModal, showModal, texts, data, loading, lang,toProject } =
     useProfileModel();
 
   return (
@@ -29,7 +29,12 @@ const Profile: React.FC = () => {
                 {texts.addGroup}
               </Button>
             </div>
-            <GroupList isEmpty={!data.length} texts={texts} list={data} />
+            <GroupList
+              itemClick={toProject}
+              isEmpty={!data.length}
+              texts={texts}
+              list={data}
+            />
           </section>
           <AddModal lang={lang} show={show} close={closeModal} texts={texts} />
         </main>

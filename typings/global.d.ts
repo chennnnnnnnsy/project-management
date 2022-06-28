@@ -6,6 +6,8 @@ declare global {
     permission: string | null; // 权限码
     element: React.FC<any>; // 组件
     name: string;
+    isMenu?: boolean;
+    children?: Array<IRoute>;
   }
 
   interface IObject {
