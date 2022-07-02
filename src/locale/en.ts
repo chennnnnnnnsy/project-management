@@ -35,6 +35,9 @@ const EN: ILocaleText = {
   FormAction: {
     success: "Save success !",
   },
+  menus: {
+    "project-list": 'Project List'
+  }
 };
 
 export default EN;

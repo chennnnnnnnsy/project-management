@@ -7,6 +7,7 @@ const projectRoutes: Array<IRoute> = [
     isMenu: true,
     path: "/project",
     permission: "PMSystem-project",
+    direct: "/project/list",
     element: ProjectLayout,
     children: [
       {

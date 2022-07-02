@@ -35,6 +35,9 @@ const ZhCN: ILocaleText = {
   FormAction: {
     success: "保存成功！",
   },
+  menus: {
+    "project-list": "项目列表",
+  },
 };
 
 export default ZhCN;

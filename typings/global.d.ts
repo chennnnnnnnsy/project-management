@@ -8,6 +8,7 @@ declare global {
     name: string;
     isMenu?: boolean;
     children?: Array<IRoute>;
+    direct?: string;
   }
 
   interface IObject {
@@ -26,5 +27,15 @@ declare global {
     isSuccess: boolean;
     result: T;
     code: string;
+  }
+
+  interface IMenu {
+    parent?: string;
+    key: string;
+    icon?: string;
+    children?: Array<IMenu>;
+    label: string;
+    type?: string;
+    path?: string;
   }
 }

@@ -43,6 +43,10 @@ interface IFormActionLT {
   success: string;
 }
 
+interface IMenusLT {
+  "project-list": string;
+}
+
 interface ILocaleText {
   home: IHomeLT;
   login: ILoginLT;
@@ -50,4 +54,5 @@ interface ILocaleText {
   profile: IProfileLT;
   HeaderComp: IHeaderCompLT;
   FormAction: IFormActionLT;
+  menus: IMenusLT;
 }
