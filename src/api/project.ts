@@ -21,7 +21,7 @@ export const postProjectGroup = () => {
 
 //********** 新增项目组
 
-interface AddProjectGroupReq {
+export interface AddProjectGroupReq {
   groupName: string;
   remark: string;
 }
@@ -30,6 +30,25 @@ export const addProjectGroup = (params: AddProjectGroupReq) => {
   return request<Array<ProjectGroupRes>>({
     url: base + "/project/group/add",
     method: "post",
-    params
+    params,
+  });
+};
+
+//********** 项目列表
+export interface ProjectListRes {
+  projectName: string;
+  version: string;
+  type: string;
+}
+
+export interface ProjectListReq extends IPaginationParams {
+  projectName?: string;
+}
+
+export const postProjectList = (params: ProjectListReq) => {
+  return request<IPage<ProjectListRes>>({
+    url: base + "/project/list",
+    method: "post",
+    params,
   });
 };

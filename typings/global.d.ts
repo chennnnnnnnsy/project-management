@@ -38,4 +38,16 @@ declare global {
     type?: string;
     path?: string;
   }
+
+  interface IPaginationParams {
+    current: number;
+    pageSize: number;
+  }
+
+  interface IPage<T> {
+    content: Array<T>;
+    current: number; //(integer, optional);
+    pageSize: number;
+    total: number; //(integer, optional);
+  }
 }
