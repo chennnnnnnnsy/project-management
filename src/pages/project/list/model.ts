@@ -25,7 +25,11 @@ const useProjectListModel = () => {
     run({ current: 1, pageSize: 10 }, { projectName });
   }, [projectName]);
 
-  return { columns, loading, data, projectName, setProjectName, pagination };
+  const toSearch = (e: any) => {
+    setProjectName(e.target.value);
+  };
+
+  return { columns, loading, data, projectName, toSearch, pagination };
 };
 
 export default useProjectListModel;
