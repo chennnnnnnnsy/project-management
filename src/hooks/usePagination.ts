@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef } from "react";
 
 type Params = {
   current: number;
@@ -24,18 +24,6 @@ const usePagination = <
   const [total, setTotal] = useState<number>(0);
   const [otherP, setOtherP] = useState<IObject>({});
 
-  const onChange = (current: number, pageSize: number) => {
-    setCurrent(current);
-    fetch();
-  };
-
-  const run = (p: IPaginationParams, other?: IObject) => {
-    setCurrent(p.current);
-    setPageSize(p.pageSize);
-    if (other && Object.keys(other).length) setOtherP(other);
-    fetch();
-  };
-
   const fetch = () => {
     setLoading(true);
 
@@ -50,6 +38,18 @@ const usePagination = <
       .finally(() => {
         setLoading(false);
       });
+  };
+
+  const onChange = (current: number, pageSize: number) => {
+    setCurrent(current);
+    fetch();
+  };
+
+  const run = (p: IPaginationParams, other?: IObject) => {
+    setCurrent(p.current);
+    setPageSize(p.pageSize);
+    if (other && Object.keys(other).length) setOtherP(other);
+    fetch();
   };
 
   return {

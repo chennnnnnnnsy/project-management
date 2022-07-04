@@ -1,3 +1,11 @@
 .list {
   padding: 24px;
 }
+.search {
+  @include flex-vertical-center;
+  justify-content: space-between;
+}
+
+.searchInput {
+  width: 460px !important;
+}
