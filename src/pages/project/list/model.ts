@@ -2,22 +2,9 @@ import { useState, useEffect } from "react";
 import { postProjectList } from "@/api/project";
 import usePagination from "@/hooks/usePagination";
 
-const useProjectListModel = () => {
-  const columns = [
-    {
-      title: "项目名",
-      dataIndex: "projectName",
-    },
-    {
-      title: "版本号",
-      dataIndex: "version",
-    },
-    {
-      title: "类型",
-      dataIndex: "type",
-    },
-  ];
+import type { ProjectListRes } from "@/api/project";
 
+const useProjectListModel = () => {
   const [projectName, setProjectName] = useState("");
   const { run, loading, data, pagination } = usePagination(postProjectList);
 
@@ -29,7 +16,11 @@ const useProjectListModel = () => {
     setProjectName(e.target.value);
   };
 
-  return { columns, loading, data, projectName, toSearch, pagination };
+  const toPage = (row: ProjectListRes) => {
+    console.log("toPage", row);
+  };
+
+  return { loading, data, toPage, projectName, toSearch, pagination };
 };
 
 export default useProjectListModel;

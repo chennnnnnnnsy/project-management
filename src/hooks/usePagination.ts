@@ -42,6 +42,7 @@ const usePagination = <
 
   const onChange = (current: number, pageSize: number) => {
     setCurrent(current);
+    setPageSize(pageSize);
     fetch();
   };
 

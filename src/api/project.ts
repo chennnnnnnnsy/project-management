@@ -38,7 +38,8 @@ export const addProjectGroup = (params: AddProjectGroupReq) => {
 export interface ProjectListRes {
   projectName: string;
   version: string;
-  type: string;
+  type: number;
+  id: string;
 }
 
 export interface ProjectListReq extends IPaginationParams {

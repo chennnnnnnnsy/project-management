@@ -9,3 +9,17 @@
 .searchInput {
   width: 460px !important;
 }
+.table {
+  margin-top: $default-padding;
+}
+.type {
+  padding: 4px 8px;
+  color: #fff;
+  display: inline-block;
+}
+.fe {
+  background-color: $primary-color;
+}
+.ee {
+  background-color: $warning-color;
+}
