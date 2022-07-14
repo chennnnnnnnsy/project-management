@@ -91,6 +91,8 @@ code {
   height: 100%;
   border-right: 1px solid #f0f0f0;
   z-index: 0;
+  position: relative;
+  transition: width 0.5s;
 }
 
 .layout {

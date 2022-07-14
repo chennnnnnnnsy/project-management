@@ -1,0 +1,19 @@
+.switchBtn {
+  position: absolute;
+  height: 140px;
+  line-height: 140px;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(204, 204, 204, 0.4);
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+.switchIcon {
+  color: $default-color;
+  font-size: 12px;
+}
+.menuContainer {
+  width: 100%;
+  overflow-x: hidden;
+}
