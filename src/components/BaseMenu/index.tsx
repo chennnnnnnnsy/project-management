@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import useRootStore from "@/store";
+import { useNavigate } from "react-router-dom";
 import { Menu } from "antd";
 import { CaretLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
 
@@ -13,7 +14,9 @@ interface IProps {
 const BaseMenu: React.FC<IProps> = ({ module }) => {
   const { user, i8n } = useRootStore();
   const texts: any = i8n.getLocaleTexts<IMenusLT>("menus");
-  const menus: any = user.getMenus(module, texts);
+  const menus: IMenu[] = user.getMenus(module, texts);
+
+  const navigate = useNavigate();
 
   const [isShow, setIsShow] = useState(true);
 
@@ -25,7 +28,8 @@ const BaseMenu: React.FC<IProps> = ({ module }) => {
   });
 
   const toPage = (vo: any) => {
-    console.log(vo);
+    const item = menus.find((m) => m.key === vo.key);
+    if (item && item.path) navigate(item.path);
   };
 
   const switchMenu = () => {

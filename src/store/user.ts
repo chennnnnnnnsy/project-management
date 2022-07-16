@@ -40,7 +40,7 @@ class UserStore {
     return menus;
   }
 
-  generateMenu(permissions: string[], routes: IRoute[], parent?: string) {
+  generateMenu(permissions: string[], routes: IRoute[], parent?: IRoute) {
     const menus: Array<IMenu> = [];
 
     for (let vo of routes) {
@@ -49,11 +49,14 @@ class UserStore {
 
       let one: IMenu = { key: vo.name, label: vo.name, path: vo.path };
 
-      if (parent) one.parent = parent;
+      if (parent) {
+        one.parent = parent.name;
+        if (one.path) one.path = parent.path + "/" + one.path;
+      }
 
       if (vo.children && vo.children.length) {
         one.type = "group";
-        one.children = this.generateMenu(permissions, vo.children, vo.name);
+        one.children = this.generateMenu(permissions, vo.children, vo);
       }
 
       menus.push(one);

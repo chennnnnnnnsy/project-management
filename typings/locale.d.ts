@@ -45,6 +45,7 @@ interface IFormActionLT {
 
 interface IMenusLT {
   "project-list": string;
+  "project-features": string;
 }
 
 interface ILocaleText {

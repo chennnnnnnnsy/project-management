@@ -37,6 +37,7 @@ const ZhCN: ILocaleText = {
   },
   menus: {
     "project-list": "项目列表",
+    'project-features': '需求墙'
   },
 };
 

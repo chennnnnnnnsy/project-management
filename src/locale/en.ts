@@ -36,7 +36,8 @@ const EN: ILocaleText = {
     success: "Save success !",
   },
   menus: {
-    "project-list": 'Project List'
+    "project-list": 'Project List',
+    'project-features': 'Feature Wall'
   }
 };
 

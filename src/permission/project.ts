@@ -1,5 +1,6 @@
 import ProjectLayout from "@/components/ProjectLayout";
 import List from "@/pages/project/list";
+import Features from "@/pages/project/features";
 
 const projectRoutes: Array<IRoute> = [
   {
@@ -16,6 +17,13 @@ const projectRoutes: Array<IRoute> = [
         path: "list",
         permission: "PMSystem-project-list",
         element: List,
+      },
+      {
+        name: "project-features",
+        isMenu: true,
+        path: "features",
+        permission: null, // TODO: add permission code
+        element: Features,
       },
     ],
   },
